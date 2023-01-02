@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="/assets/main.css">
+  <script src="/assets/index.js"></script>
+</head>
+
+<body>
+  <div id="content">
+
+  <h1>Plant Guilds</h1>
+
+  <ul id="selected-plants">
+  </ul>
+
+  <form onsubmit="return selectFirstPlant()">
+    <input type="text" id="plant-search" placeholder="Plant name..." autofocus oninput="search()">
+  </form>
+
+  <ul id="good-companions" hidden="true">
+  </ul>
+  <ul id="suggestions">
+  </ul>
+
+  <script>
+    const plantGuilds = new Map(Object.entries(JSON.parse({{ .PlantGuildsJson }})))
+  </script>
+</body>
+
+</html>
