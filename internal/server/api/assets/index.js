@@ -1,16 +1,27 @@
+// TODO: Remove the whole good-companions list and display all suggestions
+// sorted by decreasing rating. Rating = 100 * plantNameLen / queryLen + goodCompanionConstant
+// This properly handles search ranking and empty search fields
+
 let selectedPlants = new Set();
 let suggestions = new Array();
 let goodCompanions = new Set();
 let badCompanions = new Set();
 
+function ratePlant(plantName, query) {
+  return 100 * (query.length / plantName.length) + goodCompanions.has(plantName) * 10;
+}
+
 function populateSuggestions(query) {
   query = query.toLowerCase();
-  suggestions = new Array();
+  const suggestionRanking = new Array();
   plantGuilds.forEach((_, key) => {
     if (key.toLowerCase().indexOf(query) >= 0) {
-      suggestions.push(key);
+      suggestionRanking.push({ name: key, rating: ratePlant(key, query) });
     }
   })
+
+  suggestions = suggestionRanking.sort((a, b) => b.rating - a.rating)
+    .map((s) => s.name);
 }
 
 function updateSuggestions(query) {
@@ -20,12 +31,10 @@ function updateSuggestions(query) {
     const li = document.createElement("li");
     li.onclick = () => selectPlant(plantName);
     li.textContent = plantName;
+    if (goodCompanions.has(plantName)) li.classList.add("good-companion");
+    if (badCompanions.has(plantName)) li.classList.add("bad-companion");
     list.appendChild(li);
   });
-
-
-  if (query.length > 0) hideGoodCompanions()
-  else showGoodCompanions();
 }
 
 function search() {
@@ -44,7 +53,7 @@ function updateSelectedPlants(query) {
     list.appendChild(li);
   });
 
-  updateCompanions();
+  populateCompanions();
 }
 
 function selectFirstPlant() {
@@ -57,11 +66,11 @@ function selectFirstPlant() {
 }
 
 function selectPlant(name) {
+  selectedPlants.add(name);
+  updateSelectedPlants();
   const searchInput = window.document.getElementById("plant-search");
   searchInput.value = "";
   search();
-  selectedPlants.add(name);
-  updateSelectedPlants();
 }
 
 function removePlant(name) {
@@ -86,26 +95,4 @@ function populateCompanions() {
     if (goodCompanions.has(x)) goodCompanions.delete(x);
     if (badCompanions.has(x)) badCompanions.delete(x);
   }
-}
-
-function updateCompanions() {
-  populateCompanions();
-
-  const goodCompanionList = window.document.getElementById("good-companions"); // TODO: Move selection to on-page-load
-  goodCompanionList.innerHTML = "";
-  goodCompanions.forEach((plantName) => {
-    const li = document.createElement("li");
-    li.textContent = plantName;
-    goodCompanionList.appendChild(li);
-  });
-}
-
-function showGoodCompanions() {
-  const goodCompanionList = window.document.getElementById("good-companions"); // TODO: Move selection to on-page-load
-  goodCompanionList.removeAttribute("hidden");
-}
-
-function hideGoodCompanions() {
-  const goodCompanionList = window.document.getElementById("good-companions"); // TODO: Move selection to on-page-load
-  goodCompanionList.setAttribute("hidden", "true");
 }

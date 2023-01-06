@@ -6,6 +6,10 @@
   color: green;
 }
 
-#bad-companions {
+.good-companion {
+  color: green;
+}
+
+.bad-companion {
   color: red;
 }
