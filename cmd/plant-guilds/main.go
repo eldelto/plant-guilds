@@ -22,6 +22,6 @@ func main() {
 
 	http.Handle("/", r)
 
-	log.Printf("Tower listening on localhost:%d", port)
+	log.Printf("Plant-Guilds listening on localhost:%d", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), nil))
 }

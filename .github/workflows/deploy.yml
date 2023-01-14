@@ -1,4 +1,4 @@
-name: Build & Deploy Tower
+name: Build & Deploy Plant-Guilds
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/tower:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/plant-guilds:latest
     - name: Copy Deployment Artifacts to Node
       uses: appleboy/scp-action@master
       with:
@@ -32,7 +32,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "deployment/docker-compose.yml"
-        target: "/opt/tower/"
+        target: "/opt/plant-guilds/"
     - name: Restart Service
       uses: appleboy/ssh-action@master
       with:
@@ -42,7 +42,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script_stop: true
         script: |
-          cd /opt/tower/deployment 
+          cd /opt/plant-guilds/deployment 
           docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_ACCESS_TOKEN_RO }}
-          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/tower:latest
+          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/plant-guilds:latest
           docker-compose down && docker-compose up -d
