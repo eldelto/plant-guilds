@@ -1,0 +1,11 @@
+plants:
+  - name: Knoblauch
+    height: 10
+    width: 10
+    family: Brassicaceae
+    feederType: heavy
+    rootType: flachwurzler
+    goodCompanions:
+      - Erbsen
+    badCompanions:
+      - Kohl

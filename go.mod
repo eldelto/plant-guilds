@@ -6,6 +6,7 @@ require (
 	github.com/cespare/reflex v0.3.1
 	github.com/go-chi/chi/v5 v5.0.7
 	github.com/gorilla/websocket v1.5.0
+	gopkg.in/yaml.v3 v3.0.1
 	honnef.co/go/tools v0.3.3
 )
 
