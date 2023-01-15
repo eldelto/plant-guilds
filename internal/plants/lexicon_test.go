@@ -9,6 +9,8 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// TODO: Also sanitize companions.
+
 func TestLexiconConsistency(t *testing.T) {
 	if sanitizeLexicon(plants.EmbeddedLexicon) {
 		file, err := os.Create("plants-corrected.yml")
