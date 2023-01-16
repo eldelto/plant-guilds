@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/eldelto/plant-guilds/internal/plants"
+	"github.com/eldelto/plant-guilds/internal/plant"
 )
 
 //go:embed assets
@@ -19,7 +19,7 @@ type TemplateData struct{}
 
 func (td *TemplateData) PlantGuildsJson() (string, error) {
 	buffer := bytes.Buffer{}
-	if err := json.NewEncoder(&buffer).Encode(plants.Guilds()); err != nil {
+	if err := json.NewEncoder(&buffer).Encode(plant.Guilds()); err != nil {
 		return "", fmt.Errorf("failed to encode plant guilds: %w", err)
 	}
 

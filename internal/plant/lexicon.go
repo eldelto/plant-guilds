@@ -1,4 +1,4 @@
-package plants
+package plant
 
 import (
 	_ "embed"
@@ -18,8 +18,36 @@ type Info struct {
 	BadCompanions  []string `yaml:"badCompanions"`
 }
 
-type Lexicon struct {
+type LexiconListing struct {
 	Entries []Info `yaml:"plants"`
+}
+
+func (l *LexiconListing) Lexicon() *Lexicon {
+	lexicon := Lexicon{
+		Entries: map[string]Info{},
+	}
+	for _, entry := range l.Entries {
+		lexicon.Entries[entry.Name] = entry
+	}
+
+	return &lexicon
+}
+
+type Lexicon struct {
+	Entries map[string]Info
+}
+
+func (l *Lexicon) Listing() *LexiconListing {
+	listing := LexiconListing{
+		Entries: make([]Info, len(l.Entries)),
+	}
+	i := 0
+	for _, entry := range l.Entries {
+		listing.Entries[i] = entry
+		i++
+	}
+
+	return &listing
 }
 
 //go:embed plants.yml
@@ -27,9 +55,11 @@ var rawPlantInfo string
 var EmbeddedLexicon *Lexicon = &Lexicon{}
 
 func init() {
-	if err := yaml.Unmarshal([]byte(rawPlantInfo), EmbeddedLexicon); err != nil {
+	listing := LexiconListing{}
+	if err := yaml.Unmarshal([]byte(rawPlantInfo), &listing); err != nil {
 		panic(fmt.Errorf("failed to parse plant infos: %w", err))
 	}
+	EmbeddedLexicon = listing.Lexicon()
 
 	// Make the raw data reclaimable by the GC.
 	rawPlantInfo = ""

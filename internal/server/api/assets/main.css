@@ -10,6 +10,13 @@
   color: var(--mred);
 }
 
+@font-face {
+  font-family: Kongtext;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/kongtext.ttf);
+}
+
 :root {
   --white: #f1f0ee;
   --black: #17191b;
@@ -33,14 +40,16 @@
   --dred: #57142e;
 }
 
-h1 {
-  color: var(--mgreen);
-}
-
 body {
   background-color: var(--dbrown);
   color: var(--white);
   font-size: 1.2em;
+  font-weight: 100;
+  /* font-family: Kongtext; */
+}
+
+h1 {
+  color: var(--mgreen);
 }
 
 .button {

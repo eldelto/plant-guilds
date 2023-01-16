@@ -1,4 +1,4 @@
-package plants
+package plant
 
 type Relations struct {
 	Good []string
