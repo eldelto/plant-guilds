@@ -78,7 +78,7 @@ plants:
         - Kürbis
         - Knollensellerie
         - Kopfsalat
-        - Mair
+        - Mais
         - Radieschen
       badCompanions:
         - Fenchel
@@ -152,6 +152,7 @@ plants:
         - Blumenkohl
         - Rhabarber
         - Mangold
+        - Pflücksalat
         - Pfl
       badCompanions:
         - Erbsen
@@ -169,7 +170,7 @@ plants:
       feederType: ""
       rootType: ""
       goodCompanions:
-        - M
+        - Möhren
         - Kopfsalat
         - Tomaten
       badCompanions: []
@@ -217,9 +218,9 @@ plants:
         - Rote
         - Melonen
         - Zwiebeln
-        - M
+        - Möhren
         - Kürbis
-        - Mair
+        - Mais
         - Buschbohnen
         - Spargel
       badCompanions: []
@@ -281,10 +282,10 @@ plants:
         - Rhabarber
         - Melonen
         - Chinakohl
-        - M
+        - Möhren
         - Kürbis
         - Knollensellerie
-        - Mair
+        - Mais
       badCompanions:
         - Bohnen
         - Kartoffeln
@@ -346,6 +347,7 @@ plants:
         - Kopfsalat
         - Endivien
         - Erbsen
+        - Pflücksalat
         - Pfl
       badCompanions:
         - Bohnen
@@ -493,7 +495,7 @@ plants:
         - Rote Bete
         - Tomaten
         - Zwiebeln
-        - M
+        - Möhren
         - Porree
       badCompanions:
         - Erbsen
@@ -578,6 +580,7 @@ plants:
         - Spinat
         - Stangenbohnen
         - Erbsen
+        - Pflücksalat
         - Pfl
       badCompanions:
         - Kohl
@@ -701,48 +704,6 @@ plants:
       goodCompanions:
         - Knoblauch
       badCompanions: []
-    - name: M
-      height: 0
-      width: 0
-      family: ""
-      feederType: ""
-      rootType: ""
-      goodCompanions:
-        - Chicorée
-        - Dill
-        - Erbsen
-        - Knoblauch
-        - Mangold
-        - Porree
-        - Radieschen
-        - Rettich
-        - Salat
-        - Schwarzwurzeln
-        - Spinat
-        - Tomaten
-        - Zwiebeln
-      badCompanions:
-        - Rote Bete
-        - Pfefferminze
-    - name: Mair
-      height: 0
-      width: 0
-      family: ""
-      feederType: ""
-      rootType: ""
-      goodCompanions:
-        - Mangold
-        - Salat
-        - Spinat
-        - Dill
-        - Erbsen
-        - Bohnen
-      badCompanions:
-        - Weiß- und Rotkohl
-        - Steckrüben
-        - Rettich
-        - Senf
-        - Raps
     - name: Mais
       height: 0
       width: 0
@@ -759,10 +720,19 @@ plants:
         - Tomaten
         - Zucchini
         - Erbsen
+        - Spinat
+        - Dill
+        - Mangold
+        - Salat
       badCompanions:
         - Rote Bete
         - Sellerie
         - Knollensellerie
+        - Steckrüben
+        - Weiß- und Rotkohl
+        - Raps
+        - Senf
+        - Rettich
     - name: Mangold
       height: 0
       width: 0
@@ -776,8 +746,8 @@ plants:
         - Radieschen
         - Rettich
         - Salat
-        - M
-        - Mair
+        - Möhren
+        - Mais
       badCompanions:
         - Rote Beete
         - Rote
@@ -845,20 +815,26 @@ plants:
       feederType: ""
       rootType: ""
       goodCompanions:
-        - Pastinaken
-        - Paprika
-        - Rettich
-        - Blaukraut
+        - Chicorée
         - Dill
-        - Knoblauch
-        - Zwiebeln
-        - Mangold
-        - Kopfsalat
-        - Porree
-        - Tomaten
         - Erbsen
+        - Knoblauch
+        - Mangold
+        - Porree
         - Radieschen
-      badCompanions: []
+        - Rettich
+        - Salat
+        - Schwarzwurzeln
+        - Spinat
+        - Tomaten
+        - Zwiebeln
+        - Pastinaken
+        - Kopfsalat
+        - Blaukraut
+        - Paprika
+      badCompanions:
+        - Rote Bete
+        - Pfefferminze
     - name: Paprika
       height: 0
       width: 0
@@ -886,6 +862,7 @@ plants:
         - Sellerie
         - Zwiebeln
         - Tomaten
+        - Pflücksalat
         - Pfl
       badCompanions: []
     - name: Pastinaken
@@ -930,7 +907,7 @@ plants:
       goodCompanions:
         - Kartoffeln
       badCompanions:
-        - M
+        - Möhren
     - name: Pfl
       height: 0
       width: 0
@@ -954,6 +931,13 @@ plants:
       rootType: ""
       goodCompanions:
         - Pastinaken
+        - Fenchel
+        - Rote Bete
+        - Kohlarten
+        - Pastinake
+        - Stangen Bohnen
+        - Buschbohnen
+        - Radieschen
       badCompanions: []
     - name: Phacelia
       height: 0
@@ -987,7 +971,7 @@ plants:
         - Gurken
         - Schwarzwurzel
         - Melonen
-        - M
+        - Möhren
         - Kürbis
         - Knollensellerie
         - Kopfsalat
@@ -1019,11 +1003,12 @@ plants:
         - Pastinaken
         - Kohlrabi
         - Feldsalat
-        - M
+        - Möhren
         - Kopfsalat
         - Buschbohnen
         - Erdbeeren
         - Stangenbohnen
+        - Pflücksalat
         - Pfl
       badCompanions:
         - Gurken
@@ -1039,7 +1024,7 @@ plants:
       rootType: ""
       goodCompanions: []
       badCompanions:
-        - Mair
+        - Mais
     - name: Rettich
       height: 0
       width: 0
@@ -1057,7 +1042,7 @@ plants:
         - Salat
         - Spinat
         - Tomaten
-        - M
+        - Möhren
         - Kopfsalat
         - Buschbohnen
         - Stangenbohnen
@@ -1067,7 +1052,7 @@ plants:
         - Kürbis
         - Melone
         - Melonen
-        - Mair
+        - Mais
     - name: Rhabarber
       height: 0
       width: 0
@@ -1161,12 +1146,13 @@ plants:
         - Kürbis
         - Buschbohnen
         - Stangenbohnen
+        - Pflücksalat
         - Pfl
       badCompanions:
         - Mais
         - Kartoffeln
         - Paprika
-        - M
+        - Möhren
         - Porree
         - Spinat
         - Tomaten
@@ -1190,9 +1176,9 @@ plants:
         - Dill
         - Zwiebeln
         - Chinakohl
-        - M
+        - Möhren
         - Mangold
-        - Mair
+        - Mais
         - Buschbohnen
         - Porree
         - Stangenbohnen
@@ -1252,7 +1238,7 @@ plants:
       feederType: ""
       rootType: ""
       goodCompanions:
-        - M
+        - Möhren
         - Porree
       badCompanions: []
     - name: Sellerie
@@ -1294,7 +1280,7 @@ plants:
       rootType: ""
       goodCompanions: []
       badCompanions:
-        - Mair
+        - Mais
     - name: Sonnenblume
       height: 0
       width: 0
@@ -1349,9 +1335,9 @@ plants:
         - Kohl
         - Blaukraut
         - Chinakohl
-        - M
+        - Möhren
         - Knollensellerie
-        - Mair
+        - Mais
         - Buschbohnen
         - Porree
         - Erbsen
@@ -1366,6 +1352,7 @@ plants:
       feederType: ""
       rootType: ""
       goodCompanions:
+        - Pflücksalat
         - Pfl
       badCompanions: []
     - name: Stangenbohne
@@ -1415,7 +1402,7 @@ plants:
       rootType: ""
       goodCompanions: []
       badCompanions:
-        - Mair
+        - Mais
     - name: Tagetes
       height: 0
       width: 0
@@ -1452,7 +1439,7 @@ plants:
         - Rettich
         - Kohl
         - Ringelblume
-        - M
+        - Möhren
         - Knollensellerie
         - Kopfsalat
         - Spargel
@@ -1475,7 +1462,7 @@ plants:
       rootType: ""
       goodCompanions: []
       badCompanions:
-        - Mair
+        - Mais
     - name: Weiße Bohnen
       height: 0
       width: 0
@@ -1539,7 +1526,7 @@ plants:
         - Petersilie
         - Rote
         - Melonen
-        - M
+        - Möhren
         - Kürbis
       badCompanions:
         - Bohnen

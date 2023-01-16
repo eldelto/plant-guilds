@@ -86,8 +86,8 @@ function populateCompanions() {
     const plantInfo = plantGuilds.get(plantName);
 
     // Union
-    goodCompanions = new Set([...goodCompanions, ...plantInfo.Good]);
-    badCompanions = new Set([...badCompanions, ...plantInfo.Bad]);
+    goodCompanions = new Set([...goodCompanions, ...plantInfo.GoodCompanions]);
+    badCompanions = new Set([...badCompanions, ...plantInfo.BadCompanions]);
   });
 
   for (var x of badCompanions) if (goodCompanions.has(x)) goodCompanions.delete(x);

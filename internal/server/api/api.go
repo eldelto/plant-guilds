@@ -17,10 +17,10 @@ var TemplatesFS embed.FS
 
 type TemplateData struct{}
 
-func (td *TemplateData) PlantGuildsJson() (string, error) {
+func (td *TemplateData) PlantLexiconJSON() (string, error) {
 	buffer := bytes.Buffer{}
-	if err := json.NewEncoder(&buffer).Encode(plant.Guilds()); err != nil {
-		return "", fmt.Errorf("failed to encode plant guilds: %w", err)
+	if err := json.NewEncoder(&buffer).Encode(plant.EmbeddedLexicon.Entries); err != nil {
+		return "", fmt.Errorf("failed to encode plant lexicon: %w", err)
 	}
 
 	return buffer.String(), nil
